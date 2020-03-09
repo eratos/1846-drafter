@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+  db:
+    image: mongo:latest
+    networks:
+      - drafter_net
+    volumes:
+      - type: volume
+        source: dbdata
+        target: /data/db
+
+  front_end:
+    image: dockersamples/static-site:latest
+    #image: paulsmithenator/1846-drafter:latest
+    ports:
+      - "80:80"
+    networks:
+      - todo_net
+    environment: 
+      - DB_URL=mongodb://db:27017
+      - DEBUG=app:*
+    
+networks:
+  drafter_net:
+
+volumes:
+  dbdata:
