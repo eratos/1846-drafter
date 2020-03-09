@@ -16,7 +16,7 @@ services:
     ports:
       - "80:80"
     networks:
-      - todo_net
+      - drafter_net
     environment: 
       - DB_URL=mongodb://db:27017
       - DEBUG=app:*
