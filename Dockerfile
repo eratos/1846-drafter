@@ -8,7 +8,7 @@ WORKDIR /src
 COPY ["1846-drafter.csproj", "./"]
 RUN dotnet restore "./1846-drafter.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR /src
 RUN dotnet build "1846-drafter.csproj" -c Release -o /app/build
 
 FROM build AS publish
