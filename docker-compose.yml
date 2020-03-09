@@ -11,8 +11,8 @@ services:
         target: /data/db
 
   front_end:
-    image: dockersamples/static-site:latest
-    #image: paulsmithenator/1846-drafter:latest
+    #image: dockersamples/static-site:latest
+    image: paulsmithenator/1846-drafter:latest
     ports:
       - "80:80"
     networks:
